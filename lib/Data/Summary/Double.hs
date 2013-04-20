@@ -135,6 +135,8 @@ instance GM.MVector U.MVector Summary where
         v' <- GM.basicUnsafeGrow v i
         return $ MV_Summary v'
 
+instance U.Unbox Summary
+
 -- | Get a summary of a list of values.
 summary :: [Double] -> Summary
 summary = foldl' update empty
